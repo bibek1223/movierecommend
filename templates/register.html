@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Movie Cinema</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Auto Complete -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+
+  <!-- External CSS -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .body-content {
+      min-height: 100%;
+      position: relative;
+      padding-bottom: 70px; /* Adjust this value based on the footer's height */
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 70px; /* Adjust this value based on the footer's height */
+      
+      
+    }
+  </style>
+<script>
+    window.onload = function() {
+      var message = "{{ message }}";
+      if (message) {
+        alert(message);
+      }
+    }
+
+<!--    window.onload = function() {-->
+<!--      var messagepass = "{{ messagepass }}";-->
+<!--      if (messagepass) {-->
+<!--        alert(messagepass);-->
+<!--      }-->
+<!--    }-->
+
+  </script>
+  <script src="{{ url_for('static', filename='js/alert.js') }}"></script>
+</head>
+
+<body id="content" style="font-family: 'Noto Sans JP', sans-serif;">
+<div class="body-content">
+	<div class="ml-container" style="display: block;">
+
+		      <svg data-toggle="tooltip"
+		      data-placement="left" width="80" height="80" viewBox="0 0 250 250"
+			style="fill:#e50914; color:#fff; position: fixed;z-index:100; top: 0; border: 0; right: 0;" aria-hidden="true">
+			<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+			<path
+			  d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+			  fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+			<path
+			  d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+			  fill="currentColor" class="octo-body"></path>
+		      </svg>
+
+    <h1 class="app-title">The Movie Cinema</h1>
+
+    <section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+        <form class="form" method="post" action="/add_user">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-5" style="color: white;">Register in </p>
+
+          </div>
+          <!-- Name input -->
+      <div class="form-group">
+        <label for="name" >Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Enter a valid Name" required >
+      </div>
+
+      <!-- Email input -->
+      <div class="form-group">
+        <label for="email" style="color: white;">Email address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter a valid email address" required>
+      </div>
+
+      <div class="form-row">
+        <!-- password input -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="password" style="color: white;">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+          </div>
+        </div>
+        <!-- repeat password input -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="address" style="color: white;">Re-password</label>
+            <input type="password" id="repassword" name="repassword" class="form-control" placeholder="Enter re-password" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <!-- Phone number input -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="phone" style="color: white;">Phone number</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter phone number" pattern="[0-9]+" required>
+          </div>
+        </div>
+        <!-- Address input -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="address" style="color: white;">Address</label>
+            <input type="text" id="address" name="address" class="form-control" placeholder="Enter address" required>
+          </div>
+        </div>
+      </div>
+      
+
+      <button type="submit" class="btn btn-primary btn-lg">Register</button>
+      <p class="small fw-bold mt-2 pt-1 mb-0" style="color: green;">Already have an account? <a href="/login" class="link-danger" style="color: white;">Login</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+<footer class="footer">
+  <br/>
+  <div class="social" style="margin-bottom: 8px">
+    <a class="social-icons" href="" target="_blank"><i class="fa fa-github-alt" style="font-size:24px;color: #e4e0e0"></i></a>
+    <a class="social-icons" href="" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px;color: #e4e0e0"></i></a>
+    <a class="social-icons" href="" target="_blank"><i class="fa fa-quora" style="font-size:24px;color: #e4e0e0"></i></a>
+    <a class="social-icons" href="" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color: #e4e0e0"></i></a>
+    <a class="social-icons" href="" target="_blank"><i class="fa fa-twitter" style="font-size:24px;color: #e4e0e0"></i></a>
+  </div>
+</footer>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+
+  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

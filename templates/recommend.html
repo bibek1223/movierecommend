@@ -26,9 +26,9 @@
   {% if title|length %}
 
 	<div class="results">
-	    <center>
+
 	      <h2 id="name" class="text-uppercase" style="font-family: 'Rowdies', cursive;">{{title}}</h2>
-	    </center>
+
 	</div>
 	<br/>
 
@@ -88,10 +88,10 @@
 
     {% if casts|length > 1 %}
       <div class="movie" style="color: #E8E8E8;">
-        <center>
+
           <h2 style="font-family: 'Rowdies', cursive;">TOP CAST</h2>
           <h5>(Click on the cast to know more)</h5>
-        </center>
+
       </div>
 
     
@@ -114,7 +114,7 @@
     {% endif %}
     <br/>
 
-  <center>
+
     {% if reviews %}
     <h2 style="font-family: 'Rowdies', cursive;color:white">USER REVIEWS</h2>
      <div class="col-md-12" style="margin: 0 auto; margin-top:25px;">
@@ -131,14 +131,14 @@
     	        <tr style="background-color:#e5091485;">
                 <td>{{review}}</td>
                 <td>
-                  <center>
+
                     {{status}} : 
                     {% if status =='Positive' %}
                       &#128515;
                     {% else %}
                       &#128534;
                     {% endif %}
-                  </center>
+
                 </td>
             	</tr>
       	    {% endfor %}
@@ -161,14 +161,14 @@
         <h1 style="color:white"> Sorry, the reviews for this movie are not available! :( </h1>
       </div>
     {% endif %}
-  </center>
+
   <br/>
    
  
     {% if movie_cards|length > 1 %}
 
       <div class="movie" style="color: #E8E8E8;">
-        <center><h2 style="font-family: 'Rowdies', cursive;">RECOMMENDED MOVIES FOR YOU</h2><h5>(Click any of the movies to get recommendation)</h5></center>
+        <h2 style="font-family: 'Rowdies', cursive;">RECOMMENDED MOVIES FOR YOU</h2><h5>(Click any of the movies to get recommendation)</h5>
       </div>
 
       <div class="movie-content">
@@ -200,7 +200,7 @@
   {% if movie_cards|length > 1 %}
     <div class="container"> 
       <div class="movie" style="color: #E8E8E8;">
-        <center><h2 style="font-family: 'Rowdies', cursive;">Multiple matches found</h5></center>
+        <h2 style="font-family: 'Rowdies', cursive;">Multiple matches found</h2>
       </div>
 
       <div class="movie-content">
